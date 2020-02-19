@@ -1,0 +1,14 @@
+#Margaret Higginbotham
+#CSCI 466 - 2
+#Assignment 5 - Basic SQL – one table
+#TA: Gayathri Sanikommu
+
+use BabyName; #Grants access to the table
+show tables; #Shows the contents of the table
+select year from BabyName where name like 'margaret' limit 50; # lists birth years for margaret
+select name from BabyName where year=1998 limit 50; #lists names for 1998
+select name,count,gender,year,place from BabyName where name like 'margaret' and year=1998 order by name; #lists info about name in alphabetical order
+select count(*) from BabyName; #tells how many rows in table
+select count(*) from BabyName where year=1998 limit 50; #tells amount of names in birth year
+select name from BabyName where name like 'm%' limit 50; #lists names from birth year that start with m
+select count(*),gender from BabyName where year=1957 limit 50; #Lists number of names for each sex of mom's birth year

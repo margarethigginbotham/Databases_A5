@@ -1,0 +1,272 @@
+#Margaret Higginbotham
+#CSCI 466 - 2
+#Assignment 5 - Basic SQL – one table
+#TA: Gayathri Sanikommu
+
+MariaDB [z1793581]> use BabyName;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [BabyName]> show tables;
++--------------------+
+| Tables_in_BabyName |
++--------------------+
+| BabyName           |
++--------------------+
+1 row in set (0.00 sec)
+
+MariaDB [BabyName]> select year from BabyName where name like 'margaret' limit 50;
++------+
+| year |
++------+
+| 1880 |
+| 1881 |
+| 1882 |
+| 1883 |
+| 1884 |
+| 1885 |
+| 1886 |
+| 1887 |
+| 1888 |
+| 1889 |
+| 1890 |
+| 1891 |
+| 1892 |
+| 1893 |
+| 1894 |
+| 1895 |
+| 1896 |
+| 1897 |
+| 1898 |
+| 1899 |
+| 1900 |
+| 1901 |
+| 1902 |
+| 1903 |
+| 1904 |
+| 1905 |
+| 1906 |
+| 1907 |
+| 1908 |
+| 1909 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
+| 1910 |
++------+
+50 rows in set (0.00 sec)
+
+MariaDB [BabyName]> select name from BabyName where year=1998 limit 50;
++----------+
+| name     |
++----------+
+| Aadam    |
+| Aadil    |
+| Aaditya  |
+| Aailyah  |
+| Aaisha   |
+| Aajah    |
+| Aakash   |
+| Aakash   |
+| Aalayah  |
+| Aaleah   |
+| Aaleyah  |
+| Aalia    |
+| Aaliah   |
+| Aaliayah |
+| Aaliya   |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
+| Aaliyah  |
++----------+
+50 rows in set (0.00 sec)
+
+MariaDB [BabyName]> select name,count,gender,year,place from BabyName where name like 'margaret' and year=1998 order by name;
++----------+-------+--------+------+-------+
+| name     | count | gender | year | place |
++----------+-------+--------+------+-------+
+| Margaret |     7 | M      | 1998 | US    |
+| Margaret |    25 | F      | 1998 | OR    |
+| Margaret |    19 | F      | 1998 | OK    |
+| Margaret |   134 | F      | 1998 | OH    |
+| Margaret |   209 | F      | 1998 | NY    |
+| Margaret |    14 | F      | 1998 | NM    |
+| Margaret |   100 | F      | 1998 | NJ    |
+| Margaret |    19 | F      | 1998 | NH    |
+| Margaret |    16 | F      | 1998 | NE    |
+| Margaret |     5 | F      | 1998 | ND    |
+| Margaret |   109 | F      | 1998 | NC    |
+| Margaret |   146 | F      | 1998 | PA    |
+| Margaret |    12 | F      | 1998 | RI    |
+| Margaret |    47 | F      | 1998 | SC    |
+| Margaret |    16 | F      | 1998 | WV    |
+| Margaret |    56 | F      | 1998 | WI    |
+| Margaret |    58 | F      | 1998 | WA    |
+| Margaret |     7 | F      | 1998 | VT    |
+| Margaret |   123 | F      | 1998 | VA    |
+| Margaret |    21 | F      | 1998 | UT    |
+| Margaret |  2962 | F      | 1998 | US    |
+| Margaret |   167 | F      | 1998 | TX    |
+| Margaret |    68 | F      | 1998 | TN    |
+| Margaret |     5 | F      | 1998 | SD    |
+| Margaret |    10 | F      | 1998 | MT    |
+| Margaret |    26 | F      | 1998 | MS    |
+| Margaret |    83 | F      | 1998 | MO    |
+| Margaret |   136 | F      | 1998 | GA    |
+| Margaret |    80 | F      | 1998 | FL    |
+| Margaret |    11 | F      | 1998 | DE    |
+| Margaret |    18 | F      | 1998 | DC    |
+| Margaret |    41 | F      | 1998 | CT    |
+| Margaret |    47 | F      | 1998 | CO    |
+| Margaret |   178 | F      | 1998 | CA    |
+| Margaret |    25 | F      | 1998 | AZ    |
+| Margaret |    13 | F      | 1998 | AR    |
+| Margaret |    65 | F      | 1998 | AL    |
+| Margaret |     6 | F      | 1998 | HI    |
+| Margaret |    37 | F      | 1998 | IA    |
+| Margaret |     6 | F      | 1998 | ID    |
+| Margaret |    84 | F      | 1998 | MN    |
+| Margaret |   100 | F      | 1998 | MI    |
+| Margaret |    17 | F      | 1998 | ME    |
+| Margaret |    75 | F      | 1998 | MD    |
+| Margaret |   115 | F      | 1998 | MA    |
+| Margaret |    38 | F      | 1998 | LA    |
+| Margaret |    37 | F      | 1998 | KY    |
+| Margaret |    35 | F      | 1998 | KS    |
+| Margaret |    76 | F      | 1998 | IN    |
+| Margaret |   218 | F      | 1998 | IL    |
+| Margaret |     7 | F      | 1998 | AK    |
++----------+-------+--------+------+-------+
+51 rows in set (0.01 sec)
+
+MariaDB [BabyName]> select count(*) from BabyName;
++----------+
+| count(*) |
++----------+
+|  7601706 |
++----------+
+1 row in set (0.00 sec)
+
+MariaDB [BabyName]> select count(*) from BabyName where year=1998 limit 50;
++----------+
+| count(*) |
++----------+
+|   103928 |
++----------+
+1 row in set (0.00 sec)
+
+MariaDB [BabyName]> select name from BabyName where name like 'm%' limit 50;
++------+
+| name |
++------+
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
+| Ma   |
++------+
+50 rows in set (0.00 sec)
+
+MariaDB [BabyName]> select count(*),gender from BabyName where year=1957 limit 50;
++----------+--------+
+| count(*) | gender |
++----------+--------+
+|    62769 | F      |
++----------+--------+
+1 row in set (0.00 sec)
+
+MariaDB [BabyName]> \t
